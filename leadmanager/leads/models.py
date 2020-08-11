@@ -3,11 +3,11 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
+
 class Lead(models.Model):
 
     name = models.CharField(
         max_length=100)
-
 
     email = models.CharField(
         max_length=100,
@@ -22,7 +22,7 @@ class Lead(models.Model):
         auto_now_add=True
     )
 
-    owener = models.ForeignKey(
+    owner = models.ForeignKey(
         User,
         related_name="leads",
         on_delete=models.CASCADE,
